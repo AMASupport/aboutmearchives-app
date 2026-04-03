@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "About Me Archives",
+    "slug": "about-me-archives",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "aboutmearchives",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2C5F7B"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aboutmearchives.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "About Me Archives needs camera access to record your video stories",
+        "NSMicrophoneUsageDescription": "About Me Archives needs microphone access to record audio with your videos"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#2C5F7B"
+      },
+      "package": "com.aboutmearchives.app",
+      "permissions": ["CAMERA", "RECORD_AUDIO"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-camera"
+    ]
+  }
+}
