@@ -274,7 +274,10 @@ export default function CameraScreen() {
         style={styles.camera}
         facing={facing}
         mode="video"
-      >
+      />
+
+      {/* Overlays on top of camera */}
+      <View style={styles.overlayContainer}>
         {/* Top Bar */}
         <View style={styles.topBar}>
           <TouchableOpacity
@@ -336,7 +339,7 @@ export default function CameraScreen() {
             {isRecording ? 'Tap to stop' : 'Tap to record'}
           </Text>
         </View>
-      </CameraView>
+      </View>
     </View>
   );
 }
@@ -364,6 +367,9 @@ const styles = StyleSheet.create({
   // Camera view
   cameraContainer: { flex: 1, backgroundColor: '#000' },
   camera: { flex: 1 },
+  overlayContainer: {
+    ...StyleSheet.absoluteFillObject,
+  },
 
   topBar: {
     flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',
