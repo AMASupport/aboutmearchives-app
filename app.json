@@ -27,7 +27,10 @@
         "backgroundColor": "#2C5F7B"
       },
       "package": "com.aboutmearchives.app",
-      "permissions": ["CAMERA", "RECORD_AUDIO"]
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -35,7 +38,8 @@
     },
     "plugins": [
       "expo-router",
-      "expo-camera"
+      "expo-camera",
+      "@react-native-community/datetimepicker"
     ]
   }
 }

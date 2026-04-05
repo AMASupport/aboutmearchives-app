@@ -156,3 +156,49 @@ export const resendTapestryInvite = (token, connectionId) =>
 // Cancel invitation
 export const cancelTapestryInvite = (token, connectionId) =>
   apiRequest('/tapestry/cancel', { method: 'POST', body: { connection_id: connectionId }, token });
+// ============================================
+// VAULT ENDPOINTS
+// ============================================
+
+// GET /vault/messages — List all vault messages + stats
+export async function getVaultMessages(token) {
+  const res = await fetch(`${API_BASE}/vault/messages`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return res.json();
+}
+
+// POST /vault/create — Create a new vault message
+export async function createVaultMessage(token, data) {
+  const res = await fetch(`${API_BASE}/vault/create`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+// PUT /vault/edit/{id} — Edit an existing vault message
+export async function editVaultMessage(token, vaultId, data) {
+  const res = await fetch(`${API_BASE}/vault/edit/${vaultId}`, {
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+// DELETE /vault/delete/{id} — Delete a vault message
+export async function deleteVaultMessage(token, vaultId) {
+  const res = await fetch(`${API_BASE}/vault/delete/${vaultId}`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return res.json();
+}
