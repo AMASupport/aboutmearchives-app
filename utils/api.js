@@ -121,3 +121,38 @@ export const removeFamilyMember = (token, memberId) =>
 // Send/resend invitation email
 export const inviteFamilyMember = (token, memberId) =>
   apiRequest('/family/invite', { method: 'POST', body: { member_id: memberId }, token });
+
+// ============================================================
+// Tapestry endpoints
+// ============================================================
+
+// Get connections (friends + pending sent/received)
+export const getTapestryConnections = (token) =>
+  apiRequest('/tapestry/connections', { token });
+
+// Get network data for visualization
+export const getTapestryNetwork = (token) =>
+  apiRequest('/tapestry/network', { token });
+
+// Send invitation
+export const sendTapestryInvite = (token, name, email) =>
+  apiRequest('/tapestry/invite', { method: 'POST', body: { name, email }, token });
+
+// Accept invitation
+export const acceptTapestryInvite = (token, connectionId) =>
+  apiRequest('/tapestry/accept', { method: 'POST', body: { connection_id: connectionId }, token });
+
+// Decline invitation
+export const declineTapestryInvite = (token, connectionId) =>
+  apiRequest('/tapestry/decline', { method: 'POST', body: { connection_id: connectionId }, token });
+
+// Remove connection
+export const removeTapestryConnection = (token, connectionId) =>
+  apiRequest('/tapestry/remove', { method: 'POST', body: { connection_id: connectionId }, token });
+
+// Resend invitation
+export const resendTapestryInvite = (token, connectionId) =>
+  apiRequest('/tapestry/resend', { method: 'POST', body: { connection_id: connectionId }, token });
+// Cancel invitation
+export const cancelTapestryInvite = (token, connectionId) =>
+  apiRequest('/tapestry/cancel', { method: 'POST', body: { connection_id: connectionId }, token });
