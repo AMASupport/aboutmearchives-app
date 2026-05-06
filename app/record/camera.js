@@ -5,10 +5,12 @@ import {
 import { CameraView, useCameraPermissions, useMicrophonePermissions } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
+import { useKeepAwake } from 'expo-keep-awake';
 import { getToken } from '../../utils/auth';
 import { getUploadUrl, saveVideo, uploadToBunny } from '../../utils/api';
 
 export default function CameraScreen() {
+  useKeepAwake();
   const params = useLocalSearchParams();
   const {
     questionId = '',

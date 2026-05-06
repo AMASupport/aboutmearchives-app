@@ -64,6 +64,13 @@ export const saveVideo = (token, videoData) =>
 export const deleteVideo = (token, videoId) =>
   apiRequest(`/videos/${videoId}`, { method: 'DELETE', token });
 
+// Explore Stories — public videos (no auth needed)
+export const getExploreVideos = (page = 1, category = '') => {
+  let endpoint = `/videos/explore?page=${page}&per_page=10`;
+  if (category) endpoint += `&category=${category}`;
+  return apiRequest(endpoint);
+};
+
 // Get Bunny.net upload URL
 export const getUploadUrl = (token, videoType) =>
   apiRequest('/videos/upload-url', { method: 'POST', body: { video_type: videoType }, token });

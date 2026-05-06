@@ -72,15 +72,10 @@ export default function LoginScreen() {
               <Text style={styles.loginBtnText}>Sign In</Text>
             )}
           </TouchableOpacity>
-        </View>
-
-        <Text style={styles.footer}>
-          Don't have an account?{' '}
-          <Text style={styles.footerLink}>Visit aboutmearchives.com</Text>
-        </Text>
       </View>
-    </KeyboardAvoidingView>
-  );
+    </View>
+  </KeyboardAvoidingView>
+);
 }
 
 const styles = StyleSheet.create({

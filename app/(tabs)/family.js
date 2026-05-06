@@ -17,23 +17,15 @@ const API_BASE = 'https://aboutmearchives.com/wp-json/tlr/v1';
 
 const RELATIONSHIP_OPTIONS = [
   { label: 'Select relationship...', value: '' },
-  { label: 'Spouse', value: 'spouse' },
-  { label: 'Mother', value: 'mother' },
-  { label: 'Father', value: 'father' },
-  { label: 'Daughter', value: 'daughter' },
-  { label: 'Son', value: 'son' },
-  { label: 'Sister', value: 'sister' },
-  { label: 'Brother', value: 'brother' },
-  { label: 'Grandmother', value: 'grandmother' },
-  { label: 'Grandfather', value: 'grandfather' },
-  { label: 'Granddaughter', value: 'granddaughter' },
-  { label: 'Grandson', value: 'grandson' },
-  { label: 'Aunt', value: 'aunt' },
-  { label: 'Uncle', value: 'uncle' },
-  { label: 'Niece', value: 'niece' },
-  { label: 'Nephew', value: 'nephew' },
-  { label: 'Cousin', value: 'cousin' },
-  { label: 'Other', value: 'other' },
+  { label: 'Spouse',         value: 'spouse' },
+  { label: 'Parent',         value: 'parent' },
+  { label: 'Child',          value: 'child' },
+  { label: 'Sibling',        value: 'sibling' },
+  { label: 'Grandparent',    value: 'grandparent' },
+  { label: 'Grandchild',     value: 'grandchild' },
+  { label: 'Aunt/Uncle',     value: 'aunt_uncle' },
+  { label: 'Niece/Nephew',   value: 'niece_nephew' },
+  { label: 'Cousin',         value: 'cousin' },
 ];
 
 // ============================================================
